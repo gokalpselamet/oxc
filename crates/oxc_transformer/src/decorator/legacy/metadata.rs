@@ -245,16 +245,33 @@ impl<'a> LegacyDecoratorMetadata<'a, '_> {
         }
     }
 
-    /// Check if an expression is a numeric expression (including unary expressions)
+    /// Check if an expression is a numeric expression (including unary expressions).
+    ///
+    /// Also handle nested unary expressions e.g. `- -1`.
     fn is_numeric_expression(expr: &Expression<'a>) -> bool {
-        expr.is_number_literal()
-            || matches!(
-                expr, Expression::UnaryExpression(unary) if
-                matches!(
-                    // These operators still produce numeric results.
-                    unary.operator, UnaryOperator::UnaryNegation | UnaryOperator::UnaryPlus | UnaryOperator::BitwiseNot
-                ) && unary.argument.is_number_literal()
-            )
+        let mut expr = expr;
+        loop {
+            if expr.is_number_literal() {
+                return true;
+            }
+
+            if let Expression::UnaryExpression(unary) = expr {
+                match unary.operator {
+                    // `~` results in a number no matter what the argument is
+                    UnaryOperator::BitwiseNot => return true,
+                    // `+` and `-` result in a number if the argument is numeric
+                    UnaryOperator::UnaryNegation | UnaryOperator::UnaryPlus => {
+                        expr = &unary.argument;
+                        continue;
+                    }
+                    // Other unary operators (`!`, `typeof`, `void`, `delete`) are not legal as enum values,
+                    // so bail out
+                    _ => return false,
+                }
+            }
+
+            return false;
+        }
     }
 
     /// Infer the type of an enum based on its members

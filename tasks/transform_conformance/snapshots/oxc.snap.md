@@ -594,71 +594,95 @@ Scope flags mismatch:
 after transform: ScopeId(5): ScopeFlags(0x0)
 rebuilt        : ScopeId(5): ScopeFlags(Function)
 Bindings mismatch:
-after transform: ScopeId(6): ["AutoIncrementEnum", "first", "second", "third"]
-rebuilt        : ScopeId(6): ["AutoIncrementEnum"]
-Scope flags mismatch:
-after transform: ScopeId(6): ScopeFlags(0x0)
-rebuilt        : ScopeId(6): ScopeFlags(Function)
-Bindings mismatch:
-after transform: ScopeId(7): ["MixedEnum", "num", "str"]
-rebuilt        : ScopeId(7): ["MixedEnum"]
+after transform: ScopeId(7): ["UnaryBitwiseEnum", "bitwiseBoolean", "bitwiseExpression", "bitwiseString"]
+rebuilt        : ScopeId(7): ["UnaryBitwiseEnum"]
 Scope flags mismatch:
 after transform: ScopeId(7): ScopeFlags(0x0)
 rebuilt        : ScopeId(7): ScopeFlags(Function)
 Bindings mismatch:
-after transform: ScopeId(8): ["ComputedEnum", "computed", "expression"]
-rebuilt        : ScopeId(8): ["ComputedEnum"]
+after transform: ScopeId(8): ["NestedUnaryEnum", "bitwise", "negative", "positive"]
+rebuilt        : ScopeId(8): ["NestedUnaryEnum"]
 Scope flags mismatch:
 after transform: ScopeId(8): ScopeFlags(0x0)
 rebuilt        : ScopeId(8): ScopeFlags(Function)
+Bindings mismatch:
+after transform: ScopeId(9): ["AutoIncrementEnum", "first", "second", "third"]
+rebuilt        : ScopeId(9): ["AutoIncrementEnum"]
+Scope flags mismatch:
+after transform: ScopeId(9): ScopeFlags(0x0)
+rebuilt        : ScopeId(9): ScopeFlags(Function)
+Bindings mismatch:
+after transform: ScopeId(10): ["MixedEnum", "num", "str"]
+rebuilt        : ScopeId(10): ["MixedEnum"]
+Scope flags mismatch:
+after transform: ScopeId(10): ScopeFlags(0x0)
+rebuilt        : ScopeId(10): ScopeFlags(Function)
+Bindings mismatch:
+after transform: ScopeId(11): ["ComputedEnum", "computed", "expression"]
+rebuilt        : ScopeId(11): ["ComputedEnum"]
+Scope flags mismatch:
+after transform: ScopeId(11): ScopeFlags(0x0)
+rebuilt        : ScopeId(11): ScopeFlags(Function)
 Symbol flags mismatch for "StringEnum":
 after transform: SymbolId(0): SymbolFlags(RegularEnum)
 rebuilt        : SymbolId(0): SymbolFlags(FunctionScopedVariable)
 Symbol reference IDs mismatch for "StringEnum":
-after transform: SymbolId(0): [ReferenceId(2), ReferenceId(18), ReferenceId(24)]
+after transform: SymbolId(0): [ReferenceId(3), ReferenceId(23), ReferenceId(29)]
 rebuilt        : SymbolId(0): [ReferenceId(3)]
 Symbol flags mismatch for "TemplateStringEnum":
 after transform: SymbolId(3): SymbolFlags(RegularEnum)
 rebuilt        : SymbolId(2): SymbolFlags(FunctionScopedVariable)
 Symbol reference IDs mismatch for "TemplateStringEnum":
-after transform: SymbolId(3): [ReferenceId(4), ReferenceId(28)]
+after transform: SymbolId(3): [ReferenceId(5), ReferenceId(33)]
 rebuilt        : SymbolId(2): [ReferenceId(7)]
 Symbol flags mismatch for "NumberEnum":
 after transform: SymbolId(6): SymbolFlags(RegularEnum)
 rebuilt        : SymbolId(4): SymbolFlags(FunctionScopedVariable)
 Symbol reference IDs mismatch for "NumberEnum":
-after transform: SymbolId(6): [ReferenceId(6), ReferenceId(19), ReferenceId(20), ReferenceId(34)]
-rebuilt        : SymbolId(4): [ReferenceId(13), ReferenceId(48)]
+after transform: SymbolId(6): [ReferenceId(7), ReferenceId(24), ReferenceId(25), ReferenceId(39)]
+rebuilt        : SymbolId(4): [ReferenceId(13), ReferenceId(65)]
 Symbol flags mismatch for "BigIntEnum":
 after transform: SymbolId(9): SymbolFlags(RegularEnum)
 rebuilt        : SymbolId(6): SymbolFlags(FunctionScopedVariable)
 Symbol reference IDs mismatch for "BigIntEnum":
-after transform: SymbolId(9): [ReferenceId(8), ReferenceId(40)]
+after transform: SymbolId(9): [ReferenceId(9), ReferenceId(45)]
 rebuilt        : SymbolId(6): [ReferenceId(19)]
 Symbol flags mismatch for "UnaryEnum":
 after transform: SymbolId(12): SymbolFlags(RegularEnum)
 rebuilt        : SymbolId(8): SymbolFlags(FunctionScopedVariable)
 Symbol reference IDs mismatch for "UnaryEnum":
-after transform: SymbolId(12): [ReferenceId(10), ReferenceId(48)]
+after transform: SymbolId(12): [ReferenceId(11), ReferenceId(53)]
 rebuilt        : SymbolId(8): [ReferenceId(27)]
+Symbol flags mismatch for "UnaryBitwiseEnum":
+after transform: SymbolId(17): SymbolFlags(RegularEnum)
+rebuilt        : SymbolId(11): SymbolFlags(FunctionScopedVariable)
+Symbol reference IDs mismatch for "UnaryBitwiseEnum":
+after transform: SymbolId(17): [ReferenceId(13), ReferenceId(61)]
+rebuilt        : SymbolId(11): [ReferenceId(36)]
+Symbol flags mismatch for "NestedUnaryEnum":
+after transform: SymbolId(21): SymbolFlags(RegularEnum)
+rebuilt        : SymbolId(13): SymbolFlags(FunctionScopedVariable)
+Symbol reference IDs mismatch for "NestedUnaryEnum":
+after transform: SymbolId(21): [ReferenceId(15), ReferenceId(69)]
+rebuilt        : SymbolId(13): [ReferenceId(44)]
 Symbol flags mismatch for "AutoIncrementEnum":
-after transform: SymbolId(16): SymbolFlags(RegularEnum)
-rebuilt        : SymbolId(10): SymbolFlags(FunctionScopedVariable)
+after transform: SymbolId(25): SymbolFlags(RegularEnum)
+rebuilt        : SymbolId(15): SymbolFlags(FunctionScopedVariable)
 Symbol reference IDs mismatch for "AutoIncrementEnum":
-after transform: SymbolId(16): [ReferenceId(12), ReferenceId(56)]
-rebuilt        : SymbolId(10): [ReferenceId(35)]
+after transform: SymbolId(25): [ReferenceId(17), ReferenceId(77)]
+rebuilt        : SymbolId(15): [ReferenceId(52)]
 Symbol flags mismatch for "MixedEnum":
-after transform: SymbolId(20): SymbolFlags(RegularEnum)
-rebuilt        : SymbolId(12): SymbolFlags(FunctionScopedVariable)
+after transform: SymbolId(29): SymbolFlags(RegularEnum)
+rebuilt        : SymbolId(17): SymbolFlags(FunctionScopedVariable)
 Symbol reference IDs mismatch for "MixedEnum":
-after transform: SymbolId(20): [ReferenceId(14), ReferenceId(61)]
-rebuilt        : SymbolId(12): [ReferenceId(40)]
+after transform: SymbolId(29): [ReferenceId(19), ReferenceId(82)]
+rebuilt        : SymbolId(17): [ReferenceId(57)]
 Symbol flags mismatch for "ComputedEnum":
-after transform: SymbolId(23): SymbolFlags(RegularEnum)
-rebuilt        : SymbolId(14): SymbolFlags(FunctionScopedVariable)
+after transform: SymbolId(32): SymbolFlags(RegularEnum)
+rebuilt        : SymbolId(19): SymbolFlags(FunctionScopedVariable)
 Symbol reference IDs mismatch for "ComputedEnum":
-after transform: SymbolId(23): [ReferenceId(16), ReferenceId(67)]
-rebuilt        : SymbolId(14): [ReferenceId(47)]
+after transform: SymbolId(32): [ReferenceId(21), ReferenceId(88)]
+rebuilt        : SymbolId(19): [ReferenceId(64)]
 
 * oxc/metadata/imports/input.ts
 Bindings mismatch:

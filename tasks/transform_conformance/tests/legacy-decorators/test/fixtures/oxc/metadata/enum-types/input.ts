@@ -24,6 +24,20 @@ enum UnaryEnum {
   bitwise = ~3
 }
 
+function getString() { return 'string'; }
+
+enum UnaryBitwiseEnum {
+  bitwiseString = ~'string',
+  bitwiseBoolean = ~true,
+  bitwiseExpression = ~getString(),
+}
+
+enum NestedUnaryEnum {
+  negative = - -1,
+  positive = + + +2,
+  bitwise = ~~~~3
+}
+
 enum AutoIncrementEnum {
   first,  // 0
   second, // 1
@@ -45,25 +59,31 @@ function decorate(target: any, property: string) {}
 export class Foo {
   @decorate
   stringProp: StringEnum;
-  
+
   @decorate
   templateProp: TemplateStringEnum;
-  
+
   @decorate
   numberProp: NumberEnum;
-  
+
   @decorate
   bigintProp: BigIntEnum;
-  
+
   @decorate
   unaryProp: UnaryEnum;
-  
+
+  @decorate
+  unaryBitwiseProp: UnaryBitwiseEnum;
+
+  @decorate
+  nestedUnaryProp: NestedUnaryEnum;
+
   @decorate
   autoProp: AutoIncrementEnum;
-  
+
   @decorate
   mixedProp: MixedEnum;
-  
+
   @decorate
   computedProp: ComputedEnum;
 

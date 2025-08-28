@@ -29,6 +29,24 @@ var UnaryEnum = /* @__PURE__ */ function(UnaryEnum) {
   return UnaryEnum;
 }(UnaryEnum || {});
 
+function getString() {
+  return "string";
+}
+
+var UnaryBitwiseEnum = /* @__PURE__ */ function(UnaryBitwiseEnum) {
+  UnaryBitwiseEnum[UnaryBitwiseEnum["bitwiseString"] = -1] = "bitwiseString";
+  UnaryBitwiseEnum[UnaryBitwiseEnum["bitwiseBoolean"] = ~true] = "bitwiseBoolean";
+  UnaryBitwiseEnum[UnaryBitwiseEnum["bitwiseExpression"] = ~getString()] = "bitwiseExpression";
+  return UnaryBitwiseEnum;
+}(UnaryBitwiseEnum || {});
+
+var NestedUnaryEnum = /* @__PURE__ */ function(NestedUnaryEnum) {
+  NestedUnaryEnum[NestedUnaryEnum["negative"] = 1] = "negative";
+  NestedUnaryEnum[NestedUnaryEnum["positive"] = 2] = "positive";
+  NestedUnaryEnum[NestedUnaryEnum["bitwise"] = 3] = "bitwise";
+  return NestedUnaryEnum;
+}(NestedUnaryEnum || {});
+
 var AutoIncrementEnum = /* @__PURE__ */ function(AutoIncrementEnum) {
   AutoIncrementEnum[AutoIncrementEnum["first"] = 0] = "first";
   AutoIncrementEnum[AutoIncrementEnum["second"] = 1] = "second";
@@ -56,6 +74,8 @@ export class Foo {
   numberProp;
   bigintProp;
   unaryProp;
+  unaryBitwiseProp;
+  nestedUnaryProp;
   autoProp;
   mixedProp;
   computedProp;
@@ -69,6 +89,8 @@ babelHelpers.decorate([decorate, babelHelpers.decorateMetadata("design:type", St
 babelHelpers.decorate([decorate, babelHelpers.decorateMetadata("design:type", Number)], Foo.prototype, "numberProp", void 0);
 babelHelpers.decorate([decorate, babelHelpers.decorateMetadata("design:type", Number)], Foo.prototype, "bigintProp", void 0);
 babelHelpers.decorate([decorate, babelHelpers.decorateMetadata("design:type", Number)], Foo.prototype, "unaryProp", void 0);
+babelHelpers.decorate([decorate, babelHelpers.decorateMetadata("design:type", Number)], Foo.prototype, "unaryBitwiseProp", void 0);
+babelHelpers.decorate([decorate, babelHelpers.decorateMetadata("design:type", Number)], Foo.prototype, "nestedUnaryProp", void 0);
 babelHelpers.decorate([decorate, babelHelpers.decorateMetadata("design:type", Number)], Foo.prototype, "autoProp", void 0);
 babelHelpers.decorate([decorate, babelHelpers.decorateMetadata("design:type", Object)], Foo.prototype, "mixedProp", void 0);
 babelHelpers.decorate([decorate, babelHelpers.decorateMetadata("design:type", Object)], Foo.prototype, "computedProp", void 0);
